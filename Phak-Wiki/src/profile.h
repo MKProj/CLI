@@ -32,8 +32,8 @@ struct Characters Zane = {
     "Warriors/Sorcerers/Dragons - Z-Fulthrottle Synthesis"
     }, 
     "Main Character", 
-    "Zane is the energetic character that is always determined,and pushing himself to do better.\n\
-    \tIn Season 1 we see him starting outwith some success in Phaktionz and as he progresses becomes the best play.\n\
+    "Zane is the energetic character that is always determined,and pushing himself to do better.\n \
+    \tIn Season 1 we see him starting outwith some success in Phaktionz and as he progresses becomes the best play.\n \
     \tHe later becomes full of himself to it, until he sees what greedreally becomes of someone."
 };
 
@@ -48,8 +48,8 @@ struct Characters Lulo = {
     "Mythicals-Helio’s Will"
     },
     "MC’s Bestfriend",
-    "Lulo is the calm and mysterious one in the group.\n\
-    \tWith him living with Finn not being the weirdest part, he later goes evil in Season 2 after being manipulated by Lyla.\n\
+    "Lulo is the calm and mysterious one in the group.\n \
+    \tWith him living with Finn not being the weirdest part, he later goes evil in Season 2 after being manipulated by Lyla.\n \
     \tBut he still stays to be with Zane when he needs him most, as well as this he’s usually the Character who doesn’t lose, and if he does something is wrong."
 };
 
@@ -62,8 +62,8 @@ struct Characters Khloe = {
     "Kingdom - King’s Will"
     },
     "Female MC Bestfriend",
-    "Khloe is like the Mom of the gang, she’s usually the one to try and get people back together, or knows the problem of them.\n\
-    \tShe is used to the craziness of the guys, but cares much about them.\n\
+    "Khloe is like the Mom of the gang, she’s usually the one to try and get people back together, or knows the problem of them.\n \
+    \tShe is used to the craziness of the guys, but cares much about them.\n \
     \tAs well as that, she works at a daycare, and is a few months older than Zane and Lulo."
 };
 
@@ -81,32 +81,41 @@ struct Characters Percy = {
         "Alchemists - Chryso Alchemy"
     },
     "Comical Friend in the Gang",
-    "Percy is the comedian in the group, who always tries to make the others laugh.\n\ 
+    "Percy is the comedian in the group, who always tries to make the others laugh.\n\
     \tHe tends to get into arguments with Lulo as their ideals polar, but he also is one of the teammates who is the most effective in encouraging them."
 };
 
 struct Characters Finn = {
     "Finn",
     40,
-    "Male"    
-    {"Sorcerers"},
-    {"Sorcerers - Astral Perils"},
+    "Male", 
+    {
+        "Sorcerers"
+    },
+    {
+        "Sorcerers - Astral Perils"
+    },
     "Coach / Father Figure",
-    "Finn is the shop owner of the FFF shop.",
-    "He is also the father of Lyla Preston, and guardian of Lulo.\n\
-     \tHe is as well as Prestige’s right hand man, but after leaving his mission for love, he had lost his way, until he lost everything he decided it was time to go back."
+    "Finn is the shop owner of the FFF shop.\n\
+    \tHe is also the father of Lyla Preston, and guardian of Lulo.\n\
+    \tHe is as well as Prestige’s right hand man, but after leaving his mission for love, he had lost his way, until he lost everything he decided it was time to go back."
 };
 
 
-
+struct Profile profile = {Zane, Lulo, Khloe, Percy, Finn};
 
 void Profile(){
     string cmd;
+    cout << "Character Profiles: \nAvailable Commands...\n" << "list: Gives list of all characters available\n" << endl;
+    
     do{
         cout << "Profile >> ";
         cin >> cmd;
         if(cmd == "list"){
-            //List of Characters
+            cout << "Characters: \n";
+            for(int i=0; i < 5; i++){
+                cout << profile.characters[i].Name << "\n";
+            }
         }
 
         //Individual Characters
@@ -226,8 +235,10 @@ void Profile(){
         }
 
     }
-    
 
 
+    else if (cmd == "clear"){
+        system("clear");
+    }
     }while(cmd != "exit");
 }

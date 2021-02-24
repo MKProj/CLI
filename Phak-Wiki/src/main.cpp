@@ -56,6 +56,12 @@ do {
 
     /// Profile Commands Ends ///
 
+    /// Ability Commands Begin ///
+    else if (cmd == "Ability" || cmd == "A"){
+        cout << "Coming Soon!!!";
+    }
+    /// Ability Commands End ///
+
     /// General Commands Begins ///
     else if (cmd == "help"){
         cout << "Init: To initialize Phaktionz Directory\n" 

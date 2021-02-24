@@ -1,0 +1,39 @@
+else if (cmd == "Khloe"){
+        cout << "Do you want to save this? [Y/N]: ";
+        char save;
+        cin >> save;    
+        save = tolower(save);
+        if(save == 'y'){
+            cout << "Saving...\n";
+            file.open("Phaktionz/Khloe.md");
+
+            file << "# " << Khloe.Name << "\n";
+            file << "* Age: " << Khloe.Age << "\n";
+            file << "* Gender: " << Khloe.Gender << "\n";
+            file << "* Factions: " << "\n\t";   
+            for(int i=0; i < 1; i++){
+                file << i + 1 << ". " << Khloe.Faction[i] <<"\n\t";
+            }   
+            file << "\b* Decks: \n\t";
+            for(int i=0; i < 2; i++){
+                file << i + 1 << ". " << Khloe.Decks[i] << "\n\t";
+            }
+            file << "\b* Description: \n" << Khloe.Desc << endl;
+
+            ///  
+        
+            cout << "Fullname: " << Khloe.Name << "\n";
+            cout << "Age: " << Khloe.Age << "\n";
+            cout << "Gender: " << Khloe.Gender << "\n";
+            cout << "Factions: " << "\n\t";   
+            for(int i=0; i < 1; i++){
+                cout << i + 1 << ". " << Khloe.Faction[i] <<"\n\t";
+            }   
+            cout << "\bDecks: \n\t";
+            for(int i=0; i < 2; i++){
+            cout << i + 1 << ". " << Khloe.Decks[i] << "\n\t";
+        }
+            cout << "\bDescription: \n" << "\t" << Khloe.Desc << endl;
+        }
+
+    }

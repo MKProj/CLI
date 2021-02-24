@@ -4,11 +4,12 @@
 #include <sys/types.h> 
 #include <bits/stdc++.h> 
 #include "rules.h"
+#include "profile.h"
 using namespace std;
-
+string Version = "Version 1.0.0";
 int main(){
     string cmd;
-     cout << "Phaktionz-Wiki CLI \nMKProjects Version 1.0.0 \n";
+     cout << "Phaktionz-Wiki CLI \nMKProjects " << Version << "\n";
 do {
     cout << "Phaktionz >> ";
     cin >> cmd;
@@ -48,6 +49,12 @@ do {
 
     /// Rules Commands Ends ///
 
+    /// Profile Commands Begin ///
+    else if (cmd == "Profile" || cmd == "P"){
+        Profile();
+    }
+
+    /// Profile Commands Ends ///
 
     /// General Commands Begins ///
     else if (cmd == "help"){
@@ -56,6 +63,10 @@ do {
         << "Profile, P: Will give the Profile of a certain Character\n" 
         << "Ability. A: Will give the details of a certain Ability\n"
         << endl;
+    }
+
+    else if (cmd == "version" || cmd == "Version"){
+        cout << Version << endl;
     }
 
     else if (cmd == "clear"){

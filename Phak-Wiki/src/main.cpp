@@ -6,7 +6,7 @@
 #include "rules.h"
 #include "profile.h"
 using namespace std;
-string Version = "Version 1.0.0";
+string Version = "Version 1.0.1";
 int main(){
     string cmd;
      cout << "Phaktionz-Wiki CLI \nMKProjects " << Version << "\n";

@@ -6,7 +6,7 @@
 #include "rules.h"
 #include "profile.h"
 using namespace std;
-string Version = "Version 1.0.1";
+string Version = "Version 1.1.1";
 int main(){
     string cmd;
      cout << "Phaktionz-Wiki CLI \nMKProjects " << Version << "\n";
@@ -68,8 +68,41 @@ do {
         << "Rules, R: Will Offer Help in Rules\n" 
         << "Profile, P: Will give the Profile of a certain Character\n" 
         << "Ability. A: Will give the details of a certain Ability\n"
+        << "Install, I: This will install the gui Phaktionz-Wiki\n"
         << endl;
     }
+
+    else if (cmd == "Install" || cmd == "I"){
+        cout << "Phaktionz-Wiki is currently only available on Debian x86_64 systems!\n" 
+        << "Would you like to continue? [Y/N]: ";
+        char answer;
+        cin >> answer;
+        answer = tolower(answer);
+        if(answer == 'y'){
+            //First update 
+            //Make sure wget is installed 
+            //Get the package and install 
+            //Get missing packages 
+            //Install again 
+            const char *commands[6] = {
+                "sudo apt-get update",
+                "sudo apt-get install wget",
+                "wget http://download1648.mediafire.com/qnlcvn4bmkqg/mx3zrw8ntttx7jk/phaktionz-wiki_1.0.1_amd64.deb", 
+                "sudo dpkg -i phaktionz-wiki_1.0.1_amd64.deb", 
+                "sudo apt-get install -f", 
+                "sudo dpkg -i phaktionz-wiki_1.0.1_amd64.deb"
+            };
+            for(int i=0; i < 6; i++){
+                system(commands[i]);
+            }
+        } else {
+            cout << "Installation exited";
+        }
+    }
+
+
+
+
 
     else if (cmd == "version" || cmd == "Version"){
         cout << Version << endl;
